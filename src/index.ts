@@ -12,7 +12,7 @@ app.use(logger())
 app.get("/", async (c) => {
   const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless"] });
   const options = {
-    //logLevel: "info",
+    logLevel: "info",
     output: "json",
     onlyCategories: ["performance"],
     port: 9222
