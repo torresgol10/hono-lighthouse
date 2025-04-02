@@ -14,8 +14,7 @@ app.get("/", async (c) => {
   const options = {
     //logLevel: "info",
     output: "json",
-    onlyCategories: ["performance"],
-    port: chrome.port,
+    onlyCategories: ["performance"]
   };
   const runnerResult = await lighthouse("https://www.google.es/", options);
 
@@ -35,7 +34,7 @@ app.get("/", async (c) => {
   chrome.kill();
 
   //return c.html(runnerResult.report);
-  return c.text("ok");
+  return c.json(reportHtml);
 });
 
 serve(
