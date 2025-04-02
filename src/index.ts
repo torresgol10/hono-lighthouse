@@ -17,7 +17,7 @@ app.get("/", async (c) => {
     onlyCategories: ["performance"],
     port: chrome.port,
   };
-  const runnerResult = await lighthouse("https://www.fotocasa.es/es/comprar/vivienda/estepona/terraza-ascensor-piscina-piscina/186023639/d?from=list", options);
+  const runnerResult = await lighthouse("https://www.google.es/", options);
 
   // `.report` is the HTML report as a string
   fs.writeFileSync("new-path.webp", runnerResult.artifacts.FullPageScreenshot.screenshot.data.replace(/^data:image\/webp;base64,/, ''), 'base64');
