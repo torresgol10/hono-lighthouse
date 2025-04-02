@@ -14,7 +14,8 @@ app.get("/", async (c) => {
   const options = {
     //logLevel: "info",
     output: "json",
-    onlyCategories: ["performance"]
+    onlyCategories: ["performance"],
+    port: 9222
   };
   const runnerResult = await lighthouse("https://www.google.es/", options);
 
